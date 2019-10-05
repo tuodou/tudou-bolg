@@ -1,0 +1,28 @@
+.blog-item {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  img {
+    width: 300px;
+    margin-right: 20px;
+  }
+  @media (max-width: 980px) {
+    img {
+      display: none;
+    }
+  }
+  .item-content {
+    flex: 1;
+    font-size: 12px;
+    .title {
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+    .publish-time {
+      color: #999;
+    }
+  }
+  &:hover .title {
+    color: #da3a21;
+  }
+}

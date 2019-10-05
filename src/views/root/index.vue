@@ -1,7 +1,5 @@
 <template>
-  <div class="root">
-     <blog-content />
-  </div>
+   <blog-content />
 </template>
 
 <script>

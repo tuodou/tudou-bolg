@@ -98,7 +98,6 @@ export const sentences = [
 
 export function getBlogDetailApi (data) {
   let { id } = data
-  console.log(id)
   return new Promise((resolve, reject) => {
     if (blogList.some(blog => blog.id === id)) {
       let blog = blogList.filter(ele => ele.id === id)[0]

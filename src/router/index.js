@@ -16,6 +16,11 @@ export default new vueRouter({
       component: () => import('@/views/blog/blogDetail')
     },
     {
+      name: 'addBlog',
+      path: '/addBlog',
+      component: () => import('@/views/blog/addBlog')
+    },
+    {
       path: '*',
       redirect: '/'
     },

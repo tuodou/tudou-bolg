@@ -67,9 +67,11 @@ export default {
   }
   .content {
     display: flex;
+    width: 100%;
     padding: 20px 40px;
     &-main {
       flex: 1;
+      max-width: 900px;
       margin-right: 20px;
     }
     &-slide {

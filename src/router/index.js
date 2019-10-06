@@ -3,7 +3,6 @@ import vueRouter from 'vue-router'
 Vue.use(vueRouter)
 
 export default new vueRouter({
-  mode: 'history',
   routes: [
     {
       name: 'root',

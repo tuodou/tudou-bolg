@@ -20,7 +20,7 @@ axiosX.interceptors.response.use(function (response) {
   }
   if (res) {
     if (res.success) {
-      return res
+      return res.data
     } else {
       return Promise.reject(res)
     }

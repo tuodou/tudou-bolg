@@ -12,7 +12,7 @@
       <div class="content-main">
         <router-view></router-view>
       </div>
-      <div class="content-slide">
+      <div class="content-slide" v-if="!$route.meta.hideSlide">
         <slide />
       </div>
     </div>
@@ -71,7 +71,7 @@ export default {
     padding: 20px 40px;
     &-main {
       flex: 1;
-      max-width: 900px;
+      max-width: 100%;
       margin-right: 20px;
     }
     &-slide {

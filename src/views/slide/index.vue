@@ -13,11 +13,13 @@
     </div>
     <div class="recent slide-item">
       <p class="title">最新文章</p>
-      <div class="recent-item" v-for="blog in blogList" :key="blog.id">
-        <img :src="blog.img">
+      <div class="recent-item" v-for="blog in blogList" :key="blog.id" @click="toDetail(blog)">
+        <div class="img">
+          <img :src="blog.img">
+        </div>
         <div class="blog-info">
           <p class="blog-title">{{blog.title}}</p>
-          <p class="time">发布日期：{{blog.publishTime}}</p>
+          <p class="time">发布日期：{{blog.cTime | formateTime}}</p>
         </div>
       </div>
     </div>
@@ -32,18 +34,39 @@
 </template>
 
 <script>
-import { blogList, sentences } from "../../mockData/blogMock";
+import { sentences } from "../../mockData/blogMock";
+import { getRecentArticalApi } from "@/api/blog"
 export default {
   name: 'slide',
   data () {
     return {
-      blogList,
+      blogList: [],
       sentences
     }
+  },
+  created () {
+    this.getRecent()
   },
   computed: {
     dailySentence () {
       return this.sentences.filter(() => Math.random() > 0.5).slice(0, 3)
+    }
+  },
+  methods: {
+    getRecent () {
+      getRecentArticalApi({}).then(res => {
+        this.blogList = res
+      }).catch(err => {
+        console.log(err)
+      })
+    },
+    toDetail (blog) {
+      this.$router.push({
+        name: 'detail',
+        query: {
+          id: blog.id
+        }
+      })
     }
   }
 }

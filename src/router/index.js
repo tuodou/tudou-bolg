@@ -12,11 +12,17 @@ export default new vueRouter({
     {
       name: 'detail',
       path: '/detail',
+      meta: {
+        hideSlide: true
+      },
       component: () => import('@/views/blog/blogDetail')
     },
     {
       name: 'addBlog',
       path: '/addBlog',
+      meta: {
+        hideSlide: true
+      },
       component: () => import('@/views/blog/addBlog')
     },
     {

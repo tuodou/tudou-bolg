@@ -1,9 +1,11 @@
 <template>
   <div class="blog-item">
-    <img :src="blog.img" :alt="blog.title">
+    <div class="img">
+      <img :src="blog.img" :alt="blog.title">
+    </div>
     <div class="item-content">
       <p class="title">{{blog.title}}</p>
-      <p class="publish-time">发布日期：{{blog.publishTime}}</p>
+      <p class="publish-time">发布日期：{{blog.cTime | formateTime}}</p>
       <p class="brief">{{blog.brief}}</p>
     </div>
   </div>

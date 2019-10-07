@@ -5,8 +5,8 @@
     </div>
     <p class="no-more" v-if="noMore">更多内容正在补充中 ......</p>
     <div class="page">
-      <span class="page-control" :class="pageData.page === 1 ? '' : 'active'" @click="skipPage(-1)">上一页</span>
-      <span class="page-control" :class="noMore ? '' : 'active'" @click="skipPage(1)">下一页</span>
+      <span class="common-btn" :class="pageData.page === 1 ? '' : 'active'" @click="skipPage(-1)">上一页</span>
+      <span class="common-btn" :class="noMore ? '' : 'active'" @click="skipPage(1)">下一页</span>
     </div>
   </div>
 </template>
@@ -26,7 +26,7 @@ export default {
       noMore: false,
       pageData: {
         page: 1,
-        pageSize: 10
+        pageSize: 5
       }
     }
   },
@@ -36,9 +36,8 @@ export default {
   methods: {
     getList () {
       getArticalListApi(this.pageData).then(res => {
-        console.log('------', res)
-        this.blogList = res.data
-        this.noMore = res.data.length < this.pageData.pageSize
+        this.blogList = res
+        this.noMore = res.length < this.pageData.pageSize
       }).catch(err => {
         console.log(err)
       })
@@ -89,21 +88,6 @@ export default {
     align-items: center;
     width: 100%;
     height: 46px;
-    .page-control {
-      width: 76px;
-      height: 32px;
-      line-height: 32px;
-      text-align: center;
-      background: #e5e5e5;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .active {
-      background: #ffe800;
-      &:active {
-        background: #999;
-      }
-    }
   }
 }
 </style>

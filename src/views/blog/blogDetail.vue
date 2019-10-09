@@ -14,7 +14,7 @@
             <img src="../../assets/images/qq_icon.png">
           </div>
         </div>
-        <img :src="blog.img">
+        <img class="blog-img" :src="blog.img">
       </div>
       <span class="back" @click="backToList">返回</span>
     </div>

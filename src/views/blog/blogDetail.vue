@@ -26,7 +26,7 @@
       :boxShadow="false"
       :toolbarsFlag="false"
       :value="blog.detail"></mavon-editor>
-      <div class="common-btn active" @click="tiEditArtical">修改</div>
+      <!--<div class="common-btn active" @click="tiEditArtical">修改</div>-->
   </div>
 </template>
 

@@ -22,12 +22,14 @@
       <div class="common-btn active" style="margin: 20px 0;" @click="submitBlog">提交</div>
     </div>
     <mavon-editor
+      :style="!isFullScreen ? { maxHeight: '800px' } : {}"
       placeholder="是时候写一篇博客了"
       v-model="blog.detail"
       ref="md"
+      @fullScreen="fullEdit"
       @imgAdd="addImage"
       @imgDel="delImage"
-    ></mavon-editor>
+      ></mavon-editor>
     <div class="common-btn active" style="margin: 20px 0;" @click="submitBlog">提交</div>
   </div>
 </template>
@@ -40,6 +42,7 @@ export default {
   data () {
     return {
       isEdit: false,
+      isFullScreen: false,
       blog: {
         title: '',
         img: '',
@@ -61,6 +64,10 @@ export default {
     next()
   },
   methods: {
+    fullEdit (status) {
+      this.isFullScreen = status
+      console.log(this.isFullScreen)
+    },
     initBlog () {
       let id = this.$route.query.id
       if (id) {

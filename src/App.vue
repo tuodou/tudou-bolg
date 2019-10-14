@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="nav">
-      <img class="blog-icon" src="https://ccdn.goodq.top/caches/12b950de0b6f318cc63ff1bd6f5cb577/aHR0cHM6Ly81NWM5YjFhNDQ4Yzg0LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTUvMDgvYTQyYmY5MjhiODhhOGRjNDQ4ZDYzNjI3MGY4ZjQyMGMucG5n.png">
+      <img class="blog-icon" src="./assets/images/sign.jpg">
       <div class="blog-title">
         <p>土豆的博客</p>
         <p>dove tom</p>
@@ -47,7 +47,8 @@ export default {
     padding: 0 40px;
     border-bottom: 1px solid #e5e5e5;
     .blog-icon {
-      height: 100px;
+      height: 70px;
+      margin: 15px 0;
     }
     .blog-title {
       margin-left: 15px;

@@ -10,7 +10,7 @@
           <div class="share">
             <span>分享到：</span>
             <img src="../../assets/images/wechat_icon.png">
-            <img src="../../assets/images/weibo_icon.png">
+            <img @click="shareToSina" src="../../assets/images/weibo_icon.png">
             <img src="../../assets/images/qq_icon.png">
           </div>
         </div>
@@ -26,7 +26,7 @@
       :boxShadow="false"
       :toolbarsFlag="false"
       :value="blog.detail"></mavon-editor>
-      <!--<div class="common-btn active" @click="tiEditArtical">修改</div>-->
+      <!--<div class="common-btn active" @click="toEditArtical">修改</div>-->
   </div>
 </template>
 
@@ -61,7 +61,10 @@ export default {
     backToList () {
       this.$router.back()
     },
-    tiEditArtical () {
+    shareToSina () {
+      window.open('http://service.weibo.com/share/share.php?url='+document.location.href+'?sharesource=weibo&title='+this.blog.title+'&pic='+this.blog.img+'&appkey=2706825840')
+    },
+    toEditArtical () {
       this.$router.push({
         name: 'addBlog',
         query: {

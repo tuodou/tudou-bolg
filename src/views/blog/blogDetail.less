@@ -52,6 +52,37 @@
       }
     }
   }
+  .reply-box {
+    margin-top: 30px;
+    .reply-input {
+      width: 100%;
+      padding: 5px 10px;
+    }
+    .operation-btn {
+      display: flex;
+      align-items: center;
+      height: 26px;
+      margin: 5px 0 10px 0;
+      line-height: 26px;
+      font-size: 12px;
+      .btn {
+        box-sizing: content-box;
+        height: 100%;
+        padding: 0 4px;
+        line-height: 26px;
+        color: #00a1d6;
+        border: 1px solid #00a1d6;
+        border-radius: 4px;
+        cursor: pointer;
+        &:first-child {
+          margin-right: 20px;
+        }
+        &:hover {
+          background: #e5e9ef;
+        }
+      }
+    }
+  }
   /deep/ .content-input-wrapper {
     padding: 0 !important;
   }

@@ -18,7 +18,7 @@
     </div>
     <div class="footer">
       <p class="footer-content">永远相信边上的人比自己聪明</p>
-      <p class="copy-right">Copyright © 土豆的博客</p>
+      <p class="copy-right">Copyright © 浙ICP备19019129号</p>
     </div>
   </div>
 </template>
